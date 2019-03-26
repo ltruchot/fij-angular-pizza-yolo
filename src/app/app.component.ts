@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { pizzas } from "./data/pizzas";
 
 @Component({
 	selector: 'app-root',
@@ -8,35 +9,29 @@ import { Component } from '@angular/core';
 export class AppComponent {
   // propriétés
 	titre = 'Pizza YOLO';
-  menu = ["Vegetariana", "Diavolo", "Parmeggiano", "Poulet", "4 fromages"];
-  menuComplet = [
-    { 
-      nom: "Vegetariana", 
-      prix: 12, 
-      ingredient: ["tomate", "courgette"], 
-      image: "" 
-    }, 
-    { 
-      nom: "Diavolo", 
-      prix: 13, 
-      ingredient: ["tomate", "chorizo"], 
-      image: ""  
-    },
-    { nom: "Parmeggiano", prix: 9, ingredient: ["tomate", "parmesan"], image: "" }, 
-    { nom: "Poulet", prix: 12, ingredient: ["tomate", "poulet"], image: ""  },  
-    { nom: "4 fromages", prix: 14, ingredient: ["crème", "gorgonzola"], image: ""  }
-  ];
-  menuVisible = false;
-  pristine = true
+  menuComplet = pizzas;
+  menuVisible = true;
   nom = "";
+  panier = [];
+
+  get total () {
+    let total = 0;
+    for(let i = 0; i < this.panier.length; i++) {
+      total += this.panier[i].prix;
+    }
+    return total;
+    // return this.panier.reduce((acc, cur) => acc + cur.prix, 0);
+  }
 
   // méthodes
   voirMenu () {
     this.menuVisible = true;
   }
-  changePristine () {
-    this.pristine = false;
+  ajouterAuPanier (pizza) {
+    this.panier.push(pizza);
   }
-
+  supprimerItem(index) {
+    this.panier.splice(index, 1)
+  }
 
 }

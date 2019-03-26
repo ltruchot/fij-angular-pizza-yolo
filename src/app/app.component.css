@@ -1,3 +1,16 @@
+h1 {
+  color: #671814;
+  text-align: center;
+}
+
+header {
+  border-bottom: 2px dotted #671814;
+}
+
+.logo {
+  height: 50px;
+}
+
 .pizza-presentation {
   background-color: #009687;
   background-image: url("/assets/pizza.jpg");
