@@ -13,11 +13,7 @@
       </button>
 
       <div *ngIf="menuVisible === true" class="card-columns">
-        <div
-          *ngFor="let item of menuComplet"
-          class="card"
-          style="width: 18rem;"
-        >
+        <div *ngFor="let item of menuComplet" class="card">
           <app-pizza [pizzaInfo]="item"></app-pizza>
         </div>
       </div>
