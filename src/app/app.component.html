@@ -15,11 +15,7 @@
       </button>
 
       <div *ngIf="menuVisible === true" class="card-columns">
-        <div
-          *ngFor="let item of menuComplet"
-          class="card"
-          style="width: 18rem;"
-        >
+        <div *ngFor="let item of menuComplet" class="card">
           <img src="/assets/images/{{ item.image }}" class="card-img-top" />
           <div class="card-body">
             <h5 class="card-title">{{ item.nom }} - {{ item.prix }} €</h5>
