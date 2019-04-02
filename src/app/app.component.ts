@@ -1,42 +1,22 @@
 import { Component } from '@angular/core';
 
 @Component({
-	selector: 'app-root',
-	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.css']
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   // propriétés
-	titre = 'Pizza YOLO';
-  menu = ["Vegetariana", "Diavolo", "Parmeggiano", "Poulet", "4 fromages"];
-  menuComplet = [
-    { 
-      nom: "Vegetariana", 
-      prix: 12, 
-      ingredient: ["tomate", "courgette"], 
-      image: "" 
-    }, 
-    { 
-      nom: "Diavolo", 
-      prix: 13, 
-      ingredient: ["tomate", "chorizo"], 
-      image: ""  
-    },
-    { nom: "Parmeggiano", prix: 9, ingredient: ["tomate", "parmesan"], image: "" }, 
-    { nom: "Poulet", prix: 12, ingredient: ["tomate", "poulet"], image: ""  },  
-    { nom: "4 fromages", prix: 14, ingredient: ["crème", "gorgonzola"], image: ""  }
-  ];
+  titre = 'Pizza YOLO';
+  menu = ['Vegetariana', 'Diavolo', 'Parmeggiano', 'Poulet', '4 fromages'];
   menuVisible = false;
-  pristine = true
-  nom = "";
+  pristine = true;
 
   // méthodes
-  voirMenu () {
+  voirMenu() {
     this.menuVisible = true;
   }
-  changePristine () {
+  changePristine() {
     this.pristine = false;
   }
-
-
 }
