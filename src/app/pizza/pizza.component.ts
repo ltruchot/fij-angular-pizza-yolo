@@ -10,3 +10,4 @@ export class PizzaComponent {
   @Input()
   pizzaInfo;
 }
+console.log(new PizzaComponent() instanceof PizzaComponent)

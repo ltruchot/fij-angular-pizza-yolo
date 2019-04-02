@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { pizzas } from './data/pizzas';
 
+import { Pizza } from './class/Pizza';
+
+const vege = new Pizza('végétarienne', ['tomate', 'courgette'], 'vegetariana');
+console.log(vege);
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
