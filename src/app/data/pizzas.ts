@@ -18,7 +18,7 @@ export const pizzas = [
     image: "parmegiano.jpeg" 
   }, 
   { 
-      nom: "4 fromages", 
+    nom: "4 fromages", 
     prix: 14, 
     ingredients: ["crème", "gorgonzola"], 
     image: "4f.jpeg"  
@@ -28,5 +28,11 @@ export const pizzas = [
     prix: 13, 
     ingredients: ["tomate", "courgette"], 
     image: "poulet.jpeg" 
+  },   
+  { 
+    nom: "Chef", 
+    prix: 17, 
+    ingredients: ["tomate", "courgette"], 
+    image: "poulet.jpeg" 
   }
-];
+]
