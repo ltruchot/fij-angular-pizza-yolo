@@ -13,7 +13,7 @@ export class AppComponent {
   nom = '';
   panier = [];
 
-  // ceci est une propriété qui demande un calcul avant
+  // -- ceci est une propriété qui demande un calcul avant d'être montrée
   get total() {
     let total = 0;
     for (let i = 0; i < this.panier.length; i++) {
@@ -26,12 +26,13 @@ export class AppComponent {
   voirMenu() {
     this.menuVisible = true;
   }
+
   ajouterAuPanier(pizza) {
     this.panier.push(pizza);
   }
 
   supprimerItem(index) {
-    // splice permet de supprimer un item à un index en parculier
+    // -- splice permet de supprimer un item à un index en parculier
     this.panier.splice(index, 1);
   }
 }

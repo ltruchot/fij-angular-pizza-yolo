@@ -9,6 +9,7 @@
       >{{ ing }}{{ i === pizzaInfo?.ingredients.length - 1 ? "." : "," }}
     </span>
   </p>
+  <!-- FIXME: les méthodes du panier ne marchent plus -->
   <button class="btn btn-secondary" (click)="ajouterAuPanier(pizzaInfo)">
     Choisir
   </button>
