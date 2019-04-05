@@ -25,7 +25,7 @@
         <ul class="list-group list-group-flush">
           <li
             class="list-group-item d-flex justify-content-between"
-            *ngFor="let item of panier; let idx = index"
+            *ngFor="let item of pizzaService.panier; let idx = index"
           >
             {{ item?.nom }} - {{ item?.prix | currency: "EUR" }}
             <button class="btn btn-sm btn-danger" (click)="supprimerItem(idx)">
@@ -33,12 +33,12 @@
             </button>
           </li>
           <li class="list-group-item list-group-item-info">
-            <strong>Total: {{ total | currency: "EUR" }}</strong>
+            <strong>Total: {{ pizzaService.total() | currency: "EUR" }}</strong>
           </li>
         </ul>
         <button
           class="btn btn-primary float-right"
-          [disabled]="!nom || panier.length === 0"
+          [disabled]="!nom || pizzaService.panier.length === 0"
         >
           Commander
         </button>

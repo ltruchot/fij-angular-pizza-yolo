@@ -1,38 +1,12 @@
+import { Pizza } from './../class/Pizza';
+
 export const pizzas = [
-  { 
-    nom: "Vegetariana", 
-    prix: 12, 
-    ingredients: ["tomate", "courgette"], 
-    image: "vegetariana.jpeg" 
-  }, 
-  { 
-    nom: "Diavolo", 
-    prix: 13, 
-    ingredients: ["tomate", "chorizo"], 
-    image: "diavolo.jpeg"  
-  },
-  { 
-    nom: "Parmeggiano", 
-    prix: 9, 
-    ingredients: ["tomate", "parmesan"], 
-    image: "parmegiano.jpeg" 
-  }, 
-  { 
-    nom: "4 fromages", 
-    prix: 14, 
-    ingredients: ["crème", "gorgonzola"], 
-    image: "4f.jpeg"  
-  },   
-  { 
-    nom: "Poulet", 
-    prix: 13, 
-    ingredients: ["tomate", "courgette"], 
-    image: "poulet.jpeg" 
-  },   
-  { 
-    nom: "Chef", 
-    prix: 17, 
-    ingredients: ["tomate", "courgette"], 
-    image: "poulet.jpeg" 
-  }
-]
+  new Pizza('Parmeggiano', ['tomate', 'parmesan'], 'parmegiano.jpeg'),
+  new Pizza('4 fromages', ['crème', 'gorgonzola'], '4f.jpeg', 15),
+  new Pizza('Végétarienne', ['tomate', 'courgette'], 'vegetariana.jpeg'),
+  new Pizza('Diavolo', ['tomate', 'chorizo'], 'diavolo.jpeg', 13),
+  new Pizza('Parmeggiano', ['tomate', 'parmesan'], 'parmegiano.jpeg'),
+  new Pizza('4 fromages', ['crème', 'gorgonzola'], '4f.jpeg', 15),
+  new Pizza('Végétarienne', ['tomate', 'courgette'], 'vegetariana.jpeg'),
+  new Pizza('Diavolo', ['tomate', 'chorizo'], 'diavolo.jpeg', 13)
+];

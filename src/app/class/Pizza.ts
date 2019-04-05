@@ -10,10 +10,7 @@ export class Pizza {
   }
 
   // methods
-  direNom() {
-    console.log('je suis une pizza de type ' + this.nom);
-  }
   getImage() {
-    return '/assets/images/' + this.image + '.jpeg';
+    return '/assets/images/' + this.image;
   }
 }
