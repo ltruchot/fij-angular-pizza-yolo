@@ -18,9 +18,4 @@ export class AppComponent {
   voirMenu() {
     this.menuVisible = true;
   }
-
-  supprimerItem(index) {
-    // -- splice permet de supprimer un item à un index en parculier
-    this.pizzaService.panier.splice(index, 1);
-  }
 }

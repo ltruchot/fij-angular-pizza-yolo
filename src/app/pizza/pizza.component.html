@@ -10,7 +10,10 @@
     </span>
   </p>
   <!-- FIXME: les méthodes du panier ne marchent plus -->
-  <button class="btn btn-secondary" (click)="ajouterAuPanier(pizzaInfo)">
+  <button
+    class="btn btn-secondary"
+    (click)="pizzaService.ajouterAuPanier(pizzaInfo)"
+  >
     Choisir
   </button>
 </div>
