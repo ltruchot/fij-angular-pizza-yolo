@@ -1,21 +1,20 @@
-import { Component } from '@angular/core';
-import { pizzas } from './data/pizzas';
-import { PizzaService } from './pizza.service';
+import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   // propriétés
-  menuComplet = pizzas;
-  menuVisible = true;
-  nom = '';
+  pizzas;
 
-  constructor(public pizzaService: PizzaService) {}
+  // constructeur
+  constructor(public httpClient: HttpClient) {}
+
   // méthodes
-  voirMenu() {
-    this.menuVisible = true;
+  ngOnInit() {
+    this.pizzas = this.httpClient.get('/assets/pizzas.json');
   }
 }

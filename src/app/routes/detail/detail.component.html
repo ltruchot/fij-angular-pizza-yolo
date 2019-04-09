@@ -1,0 +1,63 @@
+<div *ngIf="pizzaService.panier.length === 0; else formulaire">
+  Votre panier est vide.<br />
+  Veuillez choisir vos pizzas sur la <a routerLink="/home">home</a>.
+</div>
+<ng-template #formulaire>
+  <ul class="list-group list-group-flush">
+    <li
+      class="list-group-item d-flex justify-content-between"
+      *ngFor="let item of pizzaService.panier"
+    >
+      <div [style.width]="'200px'">
+        {{ item?.nom }} - {{ item?.prix | currency: "EUR" }}
+      </div>
+      <div>
+        nombre:
+        <button
+          class="btn btn-sm btn-success mx-2"
+          (click)="pizzaService.supprimerDuPanier(item)"
+        >
+          -</button
+        >{{ item?.nb
+        }}<button
+          class="btn btn-sm btn-success mx-2"
+          (click)="pizzaService.ajouterAuPanier(item)"
+        >
+          +
+        </button>
+      </div>
+      <button
+        class="btn btn-sm btn-danger"
+        (click)="pizzaService.supprimerTout(item)"
+      >
+        x
+      </button>
+    </li>
+    <li class="list-group-item list-group-item-info">
+      <strong>Total: {{ pizzaService.total | currency: "EUR" }}</strong>
+    </li>
+  </ul>
+  <form>
+    <div class="form-control-group">
+      <label>Nom: </label
+      ><input class="form-control" [(ngModel)]="nom" name="nom" />
+    </div>
+    <div class="form-control-group">
+      <label>Adresse: </label><input class="form-control" />
+    </div>
+    <div class="form-control-group">
+      <label>Tel: </label><input class="form-control" />
+    </div>
+    <div class="form-control-group">
+      <label>Mail: </label><input class="form-control" />
+    </div>
+    <button
+      [disabled]="pizzaService.panier.length === 0"
+      class="btn btn-primary mt-3 float-right"
+      type="submit"
+    >
+      Passer la commande
+    </button>
+  </form>
+</ng-template>
+<button class="btn btn-secondary mt-3" routerLink="/home">Retour</button>
